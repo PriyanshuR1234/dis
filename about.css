@@ -1,0 +1,101 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f9f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #006400;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* About Section Styling */
+.about-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease;
+}
+
+/* Article Styling */
+.info-article {
+    background-color: #e8f5e9;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 5px solid #006400;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 100, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Hover Effect */
+.info-article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 100, 0, 0.2);
+    background-color: #f1f8f1;
+}
+
+/* Article Header Styling */
+.info-article h3 {
+    color: #006400;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.about-section p, .info-article p {
+    margin-bottom: 10px;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .info-article h3 {
+        font-size: 1.2rem;
+    }
+}

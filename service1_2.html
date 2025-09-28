@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Monitoring</title>
+    <link rel="stylesheet" href="service1_2.css">
+</head>
+<body>
+
+    <!-- Title Bar Section -->
+    <section class="title-bar">
+        <div>
+            <h1>Real-Time Weather</h1>
+            <p>Monitor live data for your area</p>
+        </div>
+    </section>
+
+    <!-- Weather Data Section -->
+    <section class="weather-section">
+        <h3 class="section-title">Current Weather Data</h3>
+        <div id="realtime-weather" class="weather-result">
+            <div class="weather-card">
+                <h3>Temperature</h3>
+                <p id="temperature">Loading...</p>
+            </div>
+            <div class="weather-card">
+                <h3>Humidity</h3>
+                <p id="humidity">Loading...</p>
+            </div>
+        </div>
+        <div id="additional-data" class="weather-result">
+            <div class="weather-card">
+                <h3>Pollution</h3>
+                <p id="pollution">Loading...</p>
+            </div>
+            <div class="weather-card">
+                <h3>UV Index</h3>
+                <p id="uv-index">Loading...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Real-Time Weather Monitoring. All rights reserved.</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="service1_2.js"></script>
+</body>
+</html>

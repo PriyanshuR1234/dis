@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soil Health Analysis</title>
+
+  <link rel="stylesheet" href="service4.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <!-- Firebase SDK will be initialized in JS -->
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Farm Planting Assistant</h1>
+    <p>Guiding you through the best time to plant based on weather and soil health.</p>
+  </header>
+
+  <!-- Form Section -->
+  <section class="card form-card">
+    <form id="soil-form">
+      <h2>Enter City Name</h2>
+
+      <label for="city">City:</label>
+      <input type="text" id="city" name="city" required />
+
+      <button type="button" id="analyze-btn">Analyze Soil</button>
+    </form>
+  </section>
+
+  <!-- Results Section -->
+  <section id="recommendations-section" class="card recommendations-card hidden">
+    <h2>Crops Recommendations</h2>
+    <div id="recommendations"></div>
+  </section>
+
+  <!-- JavaScript -->
+  <script type="module" src="service4.js"></script>
+</body>
+</html>

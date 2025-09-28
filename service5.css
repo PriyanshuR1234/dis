@@ -1,0 +1,137 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    background: #fdf6e3; /* Soft beige for a calm and earthy UI */
+    color: #333;
+    line-height: 1.7;
+  }
+  
+/* Header Section */
+header {
+    background: url('farm_fire.jpg') no-repeat center center/cover;
+    color: rgb(254, 253, 253);
+    text-align: center;
+    padding: 200px 90px;
+    margin-top: 0px;
+    position: relative;
+    z-index: 1;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to improve text readability */
+    z-index: -1;
+}
+  
+  header h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  
+  /* Main Section */
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+  }
+  
+  /* Alert Section */
+  #alert-section {
+    background-color: #fff8dc;
+    padding: 1.5rem;
+    border: 1px solid #deb887;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .alert-message {
+    font-size: 1.4rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .alert-message:hover {
+    transform: translateY(-2px);
+    box-shadow: 3px 6px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Map Section */
+  #map-section {
+    padding: 1rem;
+    background-color: #f0f0f0;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 2rem;
+  }
+  
+  #map {
+    height: 500px;
+    border-radius: 8px;
+    border: 2px solid #4682b4;
+    transition: transform 0.3s ease;
+  }
+  
+  #map:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Footer Section */
+  footer {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Additional UI enhancements for better alert visibility */
+  .twilio-call-info {
+    font-size: 1.2rem;
+    color: #8b0000;
+    padding: 0.8rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: color 0.2s ease;
+  }
+  
+  #coordinates {
+    font-size: 1.1rem;
+    color: #333;
+    background-color: #dcd0ff;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  #coordinates:hover {
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farm Fire Alert System</title>
+  <link rel="stylesheet" href="service5.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="service5.js" defer></script>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Fire Alert System</h1>
+    <p>Real-time alerts for farm safety & emergency prevention</p>
+  </header>
+
+  <main>
+    <!-- Alert Section -->
+    <section id="alert-section">
+      <h2 style="text-align:center; font-size:2rem;"> ️ ️‍🔥 Fire Alert</h2>
+      <div class="alert-message" id="alert-info">🔄 Loading Alert Info...</div>
+      <div class="twilio-call-info" id="call-info">Monitoring...</div>
+      <div class="alert-message" id="coordinates">Waiting for coordinates...</div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map-section">
+      <h2 style="text-align:center; font-size:2rem;">🗺️ Fire Alert Map</h2>
+      <div id="map"></div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2024 Farm Fire Alert System. All Rights Reserved.
+  </footer>
+</body>
+
+</html>

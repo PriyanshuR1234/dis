@@ -1,0 +1,159 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f9f9f9;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-image: url('farm2.png');  /* Ensure the path to your image is correct */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+header::before {  /* Apply to the header itself, not .head */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance contrast */
+    z-index: -1;  /* Ensure the overlay is below text */
+}
+
+header h1 {
+    font-size: 48px;
+    font-family: 'Times New Roman', Times, serif;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance contrast */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+.search-bar {
+    margin-top: 30px;
+}
+
+.search-bar input {
+    padding: 12px;
+    font-size: 18px;
+    width: 60%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    margin: 0 auto;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Section Styling */
+main {
+    padding: 40px 20px;
+}
+
+/* Section Title Styling */
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif;
+    font-weight: 600;
+    color: #3e6b3b;
+}
+
+/* Crop Container */
+.crop-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Individual Crop Styling */
+.crop {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    padding: 10px;
+}
+
+.crop img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.crop:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+button {
+    margin-top: 12px;
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Show More Button */
+#showMoreButton {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#showMoreButton:hover {
+    background-color: #218838;
+}
+
+/* Hide extra crops initially */
+.more-crops {
+    display: none;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+}

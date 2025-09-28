@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Crop Prices</title>
+    <link rel="stylesheet" href="service3.css">
+</head>
+<body>
+    <header>
+        <h1 style="color:rgb(255, 255, 255)">Real-Time Crop Prices</h1>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a crop..." oninput="searchCrop()"/>
+        </div>
+    </header>
+
+    <main>
+        <section id="rabi-crops">
+            <h1>Rabi Crops</h1>
+            <div class="crop-container">
+                <div class="crop" data-crop="wheat">
+                    <img src="https://5.imimg.com/data5/ST/QW/MY-38700875/fresh-wheat-crop.jpg" alt="Wheat">
+                    <p class="crop_name_AftrImg">Wheat</p>
+                    <button onclick="window.location.href='wheat.html';">View Details</button>
+                </div>
+                <div class="crop" data-crop="barley">
+                    <img src="https://t4.ftcdn.net/jpg/01/03/26/41/360_F_103264132_VDQIfJvaEMpL5ZjU3X9kraEJirbRCZkY.jpg" alt="Barley">
+                    <p class="crop_name_AftrImg">Barley</p>
+                    <button onclick="window.location.href='barley.html';">View Details</button>
+                </div>
+                <div class="crop" data-crop="mustard">
+                    <img src="https://media.istockphoto.com/id/1255224413/photo/mustard-seeds-making-a-background-pattern.jpg?s=612x612&w=0&k=20&c=j_sAbmUAS7l5SZriqOm35tgEY6BBnpzwtROwjnljOcE=" alt="Mustard">
+                    <p class="crop_name_AftrImg">Mustard</p>
+                    <button onclick="window.location.href='mustard.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="chickpea">
+                    <img src="https://www.shutterstock.com/image-photo/food-background-texture-raw-chickpeas-600nw-1125715514.jpg" alt="Chickpea">
+                    <p class="crop_name_AftrImg">Chickpea</p>
+                    <button onclick="window.location.href='chickpea.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="potato">
+                    <img src="https://images7.alphacoders.com/383/thumb-1920-383749.jpg" alt="Potato">
+                    <p class="crop_name_AftrImg">Potato</p>
+                    <button onclick="window.location.href='potato.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="tomato">
+                    <img src="https://cdn.pixabay.com/photo/2022/09/05/09/50/tomatoes-7433786_1280.jpg" alt="Toamato">
+                    <p class="crop_name_AftrImg">Toamato</p>
+                    <button onclick="window.location.href='tomato.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="oat">
+                    <img src="https://t3.ftcdn.net/jpg/01/27/18/72/360_F_127187211_Lj3BnpJX5pGJO4ElrUMhWoZO9imT1XcC.jpg" alt="Oat">
+                    <p class="crop_name_AftrImg">Oat</p>
+                    <button onclick="window.location.href='oat.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="garlic">
+                    <img src="https://images8.alphacoders.com/413/413326.jpg" alt="Garlic">
+                    <p class="crop_name_AftrImg">Garlic</p>
+                    <button onclick="window.location.href='garlic.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="cabbage">
+                    <img src="https://media.istockphoto.com/id/1328912132/photo/cabbage-field-at-fully-mature-stage-ready-to-harvest.jpg?s=612x612&w=0&k=20&c=EVkaA_SQm61ObApMKSATxrKusfOSTJyHTtSvtBpn-Pw=" alt="Cabbage">
+                    <p class="crop_name_AftrImg">Cabbage</p>
+                    <button onclick="window.location.href='cabbage.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="pea">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/664/303/730/leaves-peas-green-peas-pods-wallpaper-preview.jpg" alt="Pea">
+                    <p class="crop_name_AftrImg">Pea</p>
+                    <button onclick="window.location.href='pea.html';">View Details</button>
+                </div>
+            </div>
+            <button id="showMoreButton" onclick="toggleCrops()">Show More</button>
+        </section>
+
+        <section id="kharif-crops">
+            <h1>Kharif Crops</h1>
+            <div class="crop-container">
+                <div class="crop" data-crop="rice">
+                    <img src="https://images.pexels.com/photos/4110251/pexels-photo-4110251.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-4110251.jpg&fm=jpg" alt="Rice">
+                    <p class="crop_name_AftrImg">Rice</p>
+                    <button onclick="window.location.href='rice.html';">View Details</button>
+                </div>
+                <div class="crop" data-crop="corn">
+                    <img src="https://img.freepik.com/premium-photo/corn-high-quality-4k-ultra-hd-hdr_670382-129533.jpg" alt="Corn">
+                    <p class="crop_name_AftrImg">Corn</p>
+                    <button onclick="window.location.href='corn.html';">View Details</button>
+                </div>
+                <div class="crop" data-crop="cotton">
+                    <img src="https://media.istockphoto.com/id/1333742146/photo/tree-branch-with-cotton-flowers-on-white-background.jpg?s=612x612&w=0&k=20&c=AuiO_rCmM9NIAMMOuXgo3Xm9gJT67SgKGh0iNkbJ8PA=" alt="Cotton">
+                    <p class="crop_name_AftrImg">Cotton</p>
+                    <button onclick="window.location.href='cotton.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="sorghum">
+                    <img src="https://media.istockphoto.com/id/179072932/photo/close-up-of-sorghum-in-morning-sun-light.jpg?s=612x612&w=0&k=20&c=IIYcKWtokaVXlfNqJekS4_R6wHKiBpoo1rqHLGLrZ_M=" alt="Sorghum">
+                    <p class="crop_name_AftrImg">Sorghum</p>
+                    <button onclick="window.location.href='sorghum.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="jowar">
+                    <img src="https://t4.ftcdn.net/jpg/03/53/13/93/360_F_353139364_iz2ohMDi3lQnCNiB5O1Usdr2OnAeBOck.jpg" alt="Jowar">
+                    <p class="crop_name_AftrImg">Jowar</p>
+                    <button onclick="window.location.href='jowar.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="muskmelon">
+                    <img src="https://t3.ftcdn.net/jpg/04/63/30/50/360_F_463305057_cxC6gANdimD6YTcah6t20Mw4AHuUwLJD.jpg" alt="muskmelon">
+                    <p class="crop_name_AftrImg">muskmelon</p>
+                    <button onclick="window.location.href='Muskmelon.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="sugarcane">
+                    <img src="https://media.istockphoto.com/id/965303384/photo/the-sugar-cane.jpg?s=612x612&w=0&k=20&c=-nwpqHxhmDCaB9s8KfR15ZnMVbos6yQ39Yl0vzCOt2E=" alt="sugarcane">
+                    <p class="crop_name_AftrImg">sugarcane</p>
+                    <button onclick="window.location.href='sugarcane.html';">View Details</button>
+                </div>
+                <div class="crop more-crops" data-crop="watermelon">
+                    <img src="https://media.istockphoto.com/id/1142119394/photo/whole-and-slices-watermelon-fruit-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=A5XnLyeI_3mwkCNadv-QLU4jzgNux8kUPfIlDvwT0jo=" alt="watermelon">
+                    <p class="crop_name_AftrImg">watermelon</p>
+                    <button onclick="window.location.href='watermelon.html';">View Details</button>
+                </div>
+                <!-- <div class="crop more-crops" data-crop="hiiii">
+                    <img src="hiiii.jpg" alt="hiiii">
+                    <p class="crop_name_AftrImg">hiiii</p>
+                    <button onclick="window.location.href='hiiii.html';">View Details</button>
+                </div> -->
+                    
+                
+            </div>
+            <button id="showMoreButton" onclick="toggleCrops()">Show More</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real-Time Crop Prices. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let showMoreButton = document.getElementById('showMoreButton');
+        let allCrops = document.querySelectorAll('.crop');
+    
+        function toggleCrops() {
+            let hiddenCrops = document.querySelectorAll('.more-crops');
+            
+            if (showMoreButton.innerText === "Show More") {
+                hiddenCrops.forEach(crop => crop.style.display = 'block');
+                showMoreButton.innerText = "Show Less";
+            } else {
+                hiddenCrops.forEach(crop => crop.style.display = 'none');
+                showMoreButton.innerText = "Show More";
+            }
+        }
+    
+        // Initialize: Hide the crops with the "more-crops" class
+        window.onload = () => {
+            let hiddenCrops = document.querySelectorAll('.more-crops');
+            hiddenCrops.forEach(crop => crop.style.display = 'none');
+        };
+    
+        // Global search function
+        function searchCrop() {
+            let query = document.getElementById('searchInput').value.toLowerCase();
+            allCrops.forEach(crop => {
+                let cropName = crop.getAttribute('data-crop').toLowerCase();
+    
+                // Check if the query matches the crop name
+                if (cropName.includes(query)) {
+                    crop.style.display = 'block'; // Ensure it's visible
+                } else {
+                    crop.style.display = 'none'; // Hide non-matching crops
+                }
+            });
+    
+            // Update the Show More button state based on the search
+            showMoreButton.style.display = query ? 'none' : 'inline-block'; // Hide button during search
+        }
+    </script>
+    
+</body>
+</html>

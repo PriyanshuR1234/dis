@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DECISION SUPPORT SYSTEM</title>
+    <link rel="stylesheet" href="design_home.css">
+</head>
+<style>
+    .procedure{
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%;
+        
+    }
+    .pframe{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+
+    <!-- HTML Structure -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="DSS Logo" class="logo-image">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#what-we-do">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CSS for Transparent Navbar and Scroll Styles -->
+    <style>
+        /* Transparent Navbar (Default) */
+        header {
+            background-color: transparent;
+            box-shadow: none;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* White Background on Scroll */
+        header.scrolled {
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 70px;
+            height: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 15px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #6a11cb;
+            color: white;
+        }
+    </style>
+
+    <!-- JavaScript to Change Navbar Background on Scroll -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) { // Change the threshold as needed
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- hero section  -->
+    <section id="home" class="hero">
+        <h1 id="heading"></h1>
+        <p>Empowering Farmers with Real-Time Insights for Sustainable and Profitable Agriculture.</p>
+        <button onclick="window.location.href='explore_more.html'">Explore More</button>
+    </section>
+
+    <script>
+        const heading = document.getElementById('heading');
+        const text = "DECISION SUPPORT SYSTEM";
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                heading.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, 140); // Adjust delay for speed
+            }
+        }
+
+        window.onload = type;
+    </script>
+
+
+
+    <!-- What We Do Section -->
+    <section id="what-we-do" class="what-we-do">
+        <h2>What We Do !!</h2>
+
+        <div class="project-container">
+            <!-- Box 1: Real-time Weather Forecast & Alerts -->
+            <div class="project-box">
+                <div class="project-title">Real-time Weather Forecast & Alerts</div>
+                <p class="project-description">We provide accurate, real-time weather forecasts, along with alerts for
+                    adverse weather conditions to help farmers make informed decisions.</p>
+            </div>
+
+            <!-- Box 2: Soil Health Monitoring -->
+            <div class="project-box">
+                <div class="project-title">Soil Health Monitoring</div>
+                <p class="project-description">With the help of sensors, we monitor soil quality and provide actionable
+                    insights to improve crop health and yield.</p>
+            </div>
+
+            <!-- Box 3: Crop Price Tracking & Alerts -->
+            <div class="project-box">
+                <div class="project-title">Crop Price Tracking & Alerts</div>
+                <p class="project-description">We provide real-time tracking of crop prices, including alerts for price
+                    fluctuations, to help you decide the best time to buy or sell crops.</p>
+            </div>
+
+            <!-- Box 4: Best Time to Plant Seeds -->
+            <div class="project-box">
+                <div class="project-title">Best Time to Plant Seeds</div>
+                <p class="project-description">Based on weather and soil health conditions, we advise on the optimal
+                    time to plant seeds for the best crop yield.</p>
+            </div>
+
+            <!-- Box 5: Fire Alert with Emergency Call -->
+            <div class="project-box">
+                <div class="project-title">Fire Alert with Emergency Call</div>
+                <p class="project-description">Our fire alert system detects fires, sends instant alerts, and contacts
+                    emergency services automatically—no SIM card required—for swift assistance.
+                </p>
+                <!-- This feature works without the use of a SIM card, ensuring help arrives quickly in case of fire emergencies. -->
+            </div>
+        </div>
+    </section>
+
+
+
+
+    
+    <div class="procedure"><iframe class="pframe" src="service_front.html"></iframe></div>
+
+
+
+    <!-- <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                <div class="learn-more-overlay">Learn More</div>
+                <h3>Weather Service</h3>
+                <a href="service1.html">
+                    <img src="weather.jpg" alt="Weather Service" class="service-image">
+                </a>
+                <p>Get accurate, real-time weather updates for your location.</p>
+            </div>
+
+            <div class="service">
+                <div class="learn-more-overlay">Learn More</div>
+                <h3>Soil health monitoring</h3>
+                <a href="service2.html">
+                    <img src="crop health.png" alt="Consulting" class="service-image">
+                </a>
+                <p>Empowering farmers with real-time soil insights and crop health monitoring for sustainable and
+                    productive farming.</p>
+            </div>
+
+            <div class="service">
+                <div class="learn-more-overlay">Learn More</div>
+                <h3>Crop Updates</h3>
+                <a href="service3.html">
+                    <img src="crop.jpg" alt="Custom Solutions" class="service-image">
+                </a>
+                <p>Get the updates on crop prices as updated by the government</p>
+            </div>
+
+            <div class="service">
+                <div class="learn-more-overlay">Learn More</div>
+                <h3>Farm Planting Assistant</h3>
+                <a href="service4.html">
+                    <img src="plant seed.png" alt="Support & Maintenance" class="service-image">
+                </a>
+                <p>
+                <pre>Guiding you through</pre> the best time to plant based on weather and soil health.</p>
+            </div>
+
+            <div class="service">
+                <div class="learn-more-overlay">Learn More</div>
+                <h3>
+                    <pre>Fire Alert</pre>
+                </h3>
+                <a href="service5.html">
+                    <img src="firealert.png" alt="Fire Alert Service" class="service-image">
+                </a>
+                <p>Get real-time fire alerts and emergency calling services to stay safe during fire incidents.</p>
+            </div>
+
+
+
+
+             <div class="service" >
+            <div class="learn-more-overlay" >Learn More</div>
+            <h3><pre>Fire Alert</pre></h3>
+            <a href="service5.html" >
+                <img src="firealert.png" alt="Fire Alert Service" class="service-image">
+            </a>
+            <p>Get real-time fire alerts and emergency calling services to stay safe during fire incidents.</p>
+        </div>
+    </div> -->
+
+            <!-- Arrows for navigation -->
+            <!-- <button id="prevBtn" class="nav-btn">←</button>
+    <button id="nextBtn" class="nav-btn">→</button> -->
+    <!-- </section> -->
+
+    <!-- JavaScript
+<script>
+    // Select elements
+    const services = document.querySelectorAll('.service');
+    let currentIndex = 0; // Initial visible index
+    const itemsPerPage = 4; // Number of visible boxes
+
+    // Initially, display the first 4 services
+    function updateServiceDisplay() {
+        services.forEach((service, index) => {
+            // Display the first 4 items initially
+            if (index >= currentIndex && index < currentIndex + itemsPerPage) {
+                service.style.display = 'block';
+            } else {
+                service.style.display = 'none';
+            }
+        });
+    }
+
+    // Event listener for the next button
+    document.getElementById('nextBtn').addEventListener('click', () => {
+        if (currentIndex + itemsPerPage < services.length) {
+            currentIndex++; // Show the next set of services
+        } else {
+            currentIndex = 0; // Loop back to the first set of services
+        }
+        updateServiceDisplay();
+    });
+
+    // Event listener for the previous button
+    document.getElementById('prevBtn').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--; // Show the previous set of services
+        } else {
+            currentIndex = services.length - itemsPerPage; // Loop back to the last set of services
+        }
+        updateServiceDisplay();
+    });
+
+    // Initialize display on page load
+    updateServiceDisplay();
+</script> -->
+
+
+    <!-- Contact Section -->
+    <div class="landing_page">
+        <div class="responsive-container-block big-container">
+          <img class="bg-img" id="iq5bf" src="contactpagebg.png">
+          <div class="responsive-container-block container">
+            <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one">
+              <div class="content-box">
+                <p class="text-blk section-head">
+                  Contact Us
+                </p>
+                <p class="text-blk section-subhead">
+                    We’re here to help! Whether you have a question, need assistance, or just want to share your feedback, feel free to reach out.
+                </p>
+                <div class="icons-container">
+                  <a class="share-icon" href="#">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-twitter.png">
+                  </a>
+                  <a class="share-icon" href="#">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-facebook.png">
+                  </a>
+                  <a class="share-icon" href="#">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-google.png">
+                  </a>
+                  <a class="share-icon"href="#">
+                    <img class="img" src="https://workik-widget-assets.s3.amazonaws.com/Footer1-83/v1/images/Icon-instagram.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="responsive-cell-block wk-ipadp-6 wk-tab-12 wk-mobile-12 wk-desk-6 right-one" id="i1zj">
+              <form class="form-box">
+                <div class="container-block form-wrapper">
+                  <p class="text-blk contactus-head">
+                    <a class="link" href="">
+                    </a>
+                    Get a quote
+                  </p>
+                  <p class="text-blk contactus-subhead">
+                    We will get back to you in 24 hours
+                  </p>
+                  <div class="responsive-container-block">
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i10mt-7">
+                      <input class="input" id="ijowk-7" name="FirstName" placeholder="First Name" required>
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i1ro7">
+                      <input class="input" id="indfi-5" name="Last Name" placeholder="Last Name" required>
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-6 wk-ipadp-6 emial" id="ityct">
+                      <input class="input" id="ipmgh-7" name="Email" placeholder="Email" required>
+                    </div>
+                    <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
+                      <input class="input" id="imgis-6" name="PhoneNumber" placeholder="Phone Number" required>
+                    </div>
+                    <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-7">
+                      <textarea aria-placeholder="Type message here" class="textinput" id="i5vyy-7" placeholder="Type message here"></textarea>
+                    </div>
+                  </div>
+                  <button class="submit-btn" href="#">
+                    Get quote
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; DECISION SUPPORT SYSTEM. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

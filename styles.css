@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #000000;
+}
+
+.container {
+    background: #ffffff; /* Solid white background */
+    padding: 40px;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: none; /* No shadow for a flat design */
+    width: 400px;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+label i {
+    margin-right: 8px;
+    color: #6a11cb; /* Icon color */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; /* Standard border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #6a11cb; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    height: 16px;
+    margin-top: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6a11cb; /* Button color */
+    border: none;
+    color: white;
+    border-radius: 4px; /* Slightly rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+button:hover {
+    background-color: #2575fc; /* Darker color on hover */
+}
+
+.login-prompt {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link {
+    color: #6a11cb;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}

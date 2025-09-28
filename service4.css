@@ -1,0 +1,270 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url("background.png") no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Dark overlay to enhance text readability on the background image */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly dark overlay */
+    z-index: -1; /* Behind content */
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+header p {
+    font-weight: 300;
+    font-size: 1.1em;
+}
+
+/* Card Style for Form and Recommendations */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for a classy look */
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Form Styling */
+.form-card h2 {
+    font-weight: 500;
+    color: #4c9daf;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #4caaaf;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4592a0;
+}
+
+/* Recommendations Section */
+#recommendations-section {
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.recommendations-card h2 {
+    color: #4ca8af;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+#recommendations p {
+    background-color: #e7f5e8;
+    border-left: 4px solid #56b0ce;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    font-size: 1em;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Highlight headings */
+/* Style headings with a distinct background color */
+.heading-highlight {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #42a6f7 0%, #8640f7 100%);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15em;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 14px 14px 0 0;
+    margin: 28px 0 0 0;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.08);
+    letter-spacing: 0.01em;
+    border-bottom: 1px solid #e3e3e3;
+    min-height: 48px;
+    gap: 10px;
+}
+.heading-highlight .icon {
+    font-size: 1.3em;
+    margin-right: 10px;
+    filter: drop-shadow(0 1px 2px #2196f3aa);
+}
+h2 {
+    margin-top: 20px;
+    font-weight: 600;
+    color: #333;
+    background-color: #e0f7fa; /* Light cyan background for distinction */
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Loading animation */
+.loading-circle {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1e92df;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+/* Loading Spinner Styles */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading-modal {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.big-green-spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #158edf;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+/* Loading Spinner Styles */
+.spinner-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 5px solid rgba(52, 152, 219, 0.2);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    animation: spin 1s linear infinite;
+}
+
+.spinner-ring {
+    width: 100px;
+    height: 100px;
+    border: 3px solid rgba(155, 89, 182, 0.1);
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: spin 1.5s linear infinite reverse;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Add transition effects */
+.card {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Improve UI for recommendations */
+#recommendations {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

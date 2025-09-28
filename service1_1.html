@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast - Government Services</title>
+    <link rel="stylesheet" href="service1_1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Weather Service</h1>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Stay Informed with Accurate Weather Forecasts</h2>
+                    <p>Get real-time weather data and 5-day forecasts for any location worldwide. Plan your activities with confidence using our reliable weather information.</p>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-temperature-high"></i>
+                            <span>Current Temperature</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-cloud-rain"></i>
+                            <span>Precipitation Forecast</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wind"></i>
+                            <span>Wind Conditions</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>5-Day Outlook</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Weather illustration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Section -->
+    <section id="weather" class="weather-section">
+        <div class="container">
+            <div class="weather-container card">
+                <h2 class="section-title">Weather Forecast</h2>
+                <div class="search-container">
+                    <input type="text" id="city" placeholder="Enter City Name" class="input-field" />
+                    <button onclick="getWeather()" class="btn">
+                        <i class="fas fa-search"></i> Get Weather
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Animation -->
+            <div id="weather-loader" class="loader-container">
+                <div class="loader"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <!-- Today's Weather Card -->
+            <div id="weather-result" class="weather-card-container hidden">
+                <div class="card-header">
+                    <i class="fas fa-sun card-icon"></i>
+                    <h3>Today's Weather</h3>
+                </div>
+                <div class="weather-card-content">
+                    <!-- Weather data will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Tomorrow's Weather Card -->
+            <div id="tomorrow-weather-result" class="weather-card-container hidden">
+                <div class="card-header">
+                    <i class="fas fa-cloud-sun card-icon"></i>
+                    <h3>Tomorrow's Weather</h3>
+                </div>
+                <div class="weather-card-content">
+                    <!-- Tomorrow's weather will be displayed here -->
+                </div>
+            </div>
+
+            <!-- Upcoming Forecast Section -->
+            <div id="upcoming-forecast-result" class="weather-card-container hidden">
+                <div class="card-header">
+                    <i class="fas fa-calendar-alt card-icon"></i>
+                    <h3>5-Day Forecast</h3>
+                </div>
+                <div class="forecast-cards">
+                    <!-- Weather forecast will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Tips Section -->
+    <section class="weather-tips-section">
+        <div class="container">
+            <h2 class="section-title">Weather Tips</h2>
+            <div class="tips-container">
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-umbrella"></i>
+                    </div>
+                    <h3>Rainy Days</h3>
+                    <p>Always carry an umbrella when rain is forecasted. Check the hourly forecast for the best time to plan outdoor activities.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3>Sunny Weather</h3>
+                    <p>Don't forget sunscreen and stay hydrated during hot days. Plan outdoor activities in the morning or evening to avoid peak heat.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Cold Weather</h3>
+                    <p>Layer your clothing and protect exposed skin from frostbite. Check road conditions before traveling in snowy weather.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Storm Safety</h3>
+                    <p>Seek shelter indoors during thunderstorms. Avoid tall objects, open fields, and bodies of water when lightning is present.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Weather Service. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal Section for Weather Alerts -->
+    <div id="weatherModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Weather Alert</h2>
+            <p id="modal-message">Bad weather conditions detected.</p>
+        </div>
+    </div>
+
+    <script src="service1_1.js"></script>
+</body>
+</html>

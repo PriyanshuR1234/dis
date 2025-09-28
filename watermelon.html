@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermelon Prices - Real-Time Crop Information for Farmers</title>
+    <link rel="stylesheet" href="service3.css">
+    <style>
+        /* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f5f5;  /* Light grey background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #2c3e50;  /* Dark classy color */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    border-bottom: 5px solid #34495e; /* Subtle border for separation */
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;  /* Serif for elegance */
+}
+
+header p {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Main Section Styling */
+#crop-details {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: white;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+/* Crop Information Card */
+.crop-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background-color: #ecf0f1; /* Soft light grey */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.crop-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.crop-description p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Info Card Sections */
+.info-card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-family: 'Georgia', serif;
+}
+
+.info-card p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+/* Resources Section */
+.resources {
+    margin-top: 30px;
+}
+
+.resources h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.resources ul li {
+    margin-bottom: 12px;
+}
+
+.resources ul li a {
+    color: #16a085;  /* Classy teal for links */
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.resources ul li a:hover {
+    color: #1abc9c;  /* Slightly lighter teal for hover effect */
+}
+
+/* Navigation Button */
+.navigation button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s;
+}
+
+.navigation button:hover {
+    background-color: #34495e;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+    font-size: 16px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .crop-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .crop-image {
+        max-width: 100%;
+        margin-bottom: 20px;
+        }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Real-Time Crop Prices</h1>
+        <p>Stay updated with the latest watermelon prices, weather updates, and farming tips.</p>
+    </header>
+
+    <main>
+        <section id="crop-details">
+            <h2>Watermelon (तरबूज)</h2>
+
+            <!-- Crop Info Card -->
+            <div class="crop-card">
+                <img src="https://media.istockphoto.com/id/1142119394/photo/whole-and-slices-watermelon-fruit-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=A5XnLyeI_3mwkCNadv-QLU4jzgNux8kUPfIlDvwT0jo=" alt="Watermelon Crop" class="crop-image">
+                <div class="crop-description">
+                    <p><strong>Price (per kg):</strong> ₹20</p>
+                    <p><strong>Season:</strong> Summer Crop</p>
+                    <p><strong>Uses:</strong> Fresh consumption, juices, and desserts.</p>
+                </div>
+            </div>
+
+            <!-- Real-Time Price Section -->
+            <div class="info-card price-section">
+                <h3>Current Market Price</h3>
+                <p><strong>Price Today (per kg):</strong> ₹20</p>
+            </div>
+
+            <!-- Frame Section -->
+            <iframe src="https://procurementtactics.com/watermelon-prices/" 
+            width="970" 
+            height="900" 
+            style="border: none;">
+            </iframe>
+
+            <!-- Useful Resources -->
+            <div class="resources">
+                <h3>Useful Resources</h3>
+                <ul>
+                    <li><a href="#" target="_blank">Government Schemes for Watermelon Farmers</a></li>
+                    <li><a href="#" target="_blank">Market Rates in Your Region</a></li>
+                    <li><a href="#" target="_blank">Watermelon Farming Tips and Guides</a></li>
+                </ul>
+            </div>
+
+            <!-- Navigation Button -->
+            <div class="navigation">
+                <button onclick="window.location.href='index.html';">Back to Crop Listings</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Real-Time Crop Prices. All rights reserved.</p>
+    </footer>
+</body>
+</html>

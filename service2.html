@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soil Health Analysis</title>
+    <link rel="stylesheet" href="service2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header>
+      <div class="header-content">
+        <h1><i class="fas fa-leaf"></i> Soil Health Analysis</h1>
+        <p>Get expert recommendations to enhance your soil's productivity.</p>
+      </div>
+      <div class="header-decoration">
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+        <div class="decoration-circle"></div>
+      </div>
+    </header>
+
+    <!-- Soil Analysis Form Card -->
+    <section class="card form-card">
+      <div class="card-header">
+        <i class="fas fa-flask"></i>
+        <h2>Enter Soil Details</h2>
+      </div>
+      <form id="soil-form">
+        <div class="input-group">
+          <label for="ph">Soil pH:</label>
+          <div class="input-with-icon">
+            <i class="fas fa-vial"></i>
+            <input
+              type="number"
+              id="ph"
+              name="ph"
+              step="0.1"
+              required
+              placeholder="Enter pH value (0-14)"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="nitrogen">Nitrogen Level (ppm):</label>
+          <div class="input-with-icon">
+            <i class="fas fa-atom"></i>
+            <input
+              type="number"
+              id="nitrogen"
+              name="nitrogen"
+              step="0.1"
+              required
+              placeholder="Enter nitrogen level"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="phosphorus">Phosphorus Level (ppm):</label>
+          <div class="input-with-icon">
+            <i class="fas fa-atom"></i>
+            <input
+              type="number"
+              id="phosphorus"
+              name="phosphorus"
+              step="0.1"
+              required
+              placeholder="Enter phosphorus level"
+            />
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="potassium">Potassium Level (ppm):</label>
+          <div class="input-with-icon">
+            <i class="fas fa-atom"></i>
+            <input
+              type="number"
+              id="potassium"
+              name="potassium"
+              step="0.1"
+              required
+              placeholder="Enter potassium level"
+            />
+          </div>
+        </div>
+
+        <!-- Moisture Input Field -->
+        <div class="input-group">
+          <label for="moisture">Soil Moisture (%):</label>
+          <div class="input-with-icon">
+            <i class="fas fa-tint"></i>
+            <input
+              type="number"
+              id="moisture"
+              name="moisture"
+              step="0.1"
+              placeholder="Enter soil moisture percentage"
+            />
+          </div>
+        </div>
+
+        <button type="button" id="analyze-btn" onclick="analyzeSoil()">
+          <span class="btn-text">Analyze Soil</span>
+          <span class="btn-icon"><i class="fas fa-flask"></i></span>
+        </button>
+
+        <!-- Fetch Data Button -->
+        <button type="button" id="fetch-data-btn">
+          <span class="btn-text">Fetch Data</span>
+          <span class="btn-icon"><i class="fas fa-download"></i></span>
+        </button>
+      </form>
+    </section>
+
+    <!-- Loading Animation -->
+    <div id="loading-container" class="hidden">
+      <div class="loading-spinner">
+        <div class="spinner-container">
+          <div class="spinner"></div>
+          <div class="spinner-ring"></div>
+        </div>
+        <p>Analyzing your soil data...</p>
+        <div class="loading-progress">
+          <div class="progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommendations Display Section -->
+    <section
+      id="recommendations-section"
+      class="card recommendations-card hidden"
+    >
+      <div class="card-header">
+        <i class="fas fa-chart-line"></i>
+        <h2>Soil Improvement Recommendations</h2>
+      </div>
+
+      <div class="soil-status-container">
+        <div class="soil-status-header">
+          <i class="fas fa-leaf"></i>
+          <h3>Soil Condition</h3>
+        </div>
+        <div class="soil-status-content">
+          <div class="status-item" id="nitrogen-status">
+            <span class="status-label">Nitrogen (N):</span>
+            <span class="status-value">-</span>
+          </div>
+          <div class="status-item" id="phosphorus-status">
+            <span class="status-label">Phosphorus (P):</span>
+            <span class="status-value">-</span>
+          </div>
+          <div class="status-item" id="potassium-status">
+            <span class="status-label">Potassium (K):</span>
+            <span class="status-value">-</span>
+          </div>
+          <div class="status-item" id="ph-status">
+            <span class="status-label">pH:</span>
+            <span class="status-value">-</span>
+          </div>
+          <div class="status-item" id="moisture-status">
+            <span class="status-label">Moisture (%):</span>
+            <span class="status-value">-</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recommendations-container">
+        <div class="recommendations-header">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Improvement Recommendations</h3>
+        </div>
+        <div class="recommendations-content">
+          <div class="recommendation-category">
+            <h4><i class="fas fa-seedling"></i> Organic Materials</h4>
+            <ul id="organic-recommendations" class="recommendation-list"></ul>
+          </div>
+          <div class="recommendation-category">
+            <h4><i class="fas fa-flask"></i> Inorganic Materials</h4>
+            <ul id="inorganic-recommendations" class="recommendation-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="print-btn" class="action-btn">
+          <i class="fas fa-print"></i> Print Results
+        </button>
+        <button id="share-btn" class="action-btn">
+          <i class="fas fa-share-alt"></i> Share
+        </button>
+      </div>
+    </section>
+
+    <!-- JavaScript File -->
+    <script src="service2.js"></script>
+  </body>
+</html>
